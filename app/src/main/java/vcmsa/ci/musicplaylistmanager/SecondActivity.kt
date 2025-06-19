@@ -21,7 +21,7 @@ class SecondActivity : AppCompatActivity() {
         val displayList = findViewById<TextView>(R.id.txtSongList)
         val btnBack = findViewById<Button>(R.id.btnBack)
 
-        // Build display text only for items with quantity >= 2
+        // Build display text only for items with rating >= 2
         val result = StringBuilder()
         for (i in songTitle.indices) {
             if (rating[i] >= 1) {
@@ -29,7 +29,7 @@ class SecondActivity : AppCompatActivity() {
             }
         }
         // Set result to the text view
-        displayList.text = if (result.isNotEmpty()) result.toString() else "No items with quantity >= 2"
+        displayList.text = if (result.isNotEmpty()) result.toString() else "No items with quantity >= 1"
 
         // Handle return to main screen
         btnBack.setOnClickListener {
