@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Input field for Song Title -->
+    <EditText
+        android:id="@+id/editTheSongTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="The Song Title" />
+
+    <!-- Input field for Artist's name -->
+    <EditText
+        android:id="@+id/editTheArtistName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="The Artist's Name" />
+
+    <!-- Input field for Rating -->
+    <EditText
+        android:id="@+id/editTheRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="The Rating (1-5)"
+        android:inputType="number" />
+
+    <!-- Input field for Comments -->
+    <EditText
+        android:id="@+id/editComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Comment" />
+
+    <!-- Button to add item -->
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add to Playlist" />
+
+    <!-- Button to view packing list -->
+    <Button
+        android:id="@+id/btnViewList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Song List" />
+
+    <!-- Button to exit app -->
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exit" />
+</LinearLayout>
