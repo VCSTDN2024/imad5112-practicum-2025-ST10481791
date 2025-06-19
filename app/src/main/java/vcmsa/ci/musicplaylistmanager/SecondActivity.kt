@@ -1,7 +1,5 @@
-package vcmsa.ci.myapplication
+package vcmsa.ci.musicplaylistmanager
 
-import android.annotation.SuppressLint
-import android.media.Rating
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -9,15 +7,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import vcmsa.ci.musicplaylistmanager.R
 
-class SongListActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_song_list) // load layout for Screen two
-
+        setContentView(R.layout.activity_second)
         // Rertieve arrays from intent
         val songTitle = intent.getStringArrayListExtra("SongTitle")?: arrayListOf()
         val rating = intent.getIntegerArrayListExtra("Rating")?: arrayListOf()
@@ -30,7 +25,7 @@ class SongListActivity : AppCompatActivity() {
         val result = StringBuilder()
         for (i in songTitle.indices) {
             if (rating[i] >= 1) {
-                result.append("Item: ${songTitle[i]}, Quantity: ${rating[i]}, Comment: ${comment[i]}\n")
+                result.append("Song Title: ${songTitle[i]}, Rating: ${rating[i]}, Comment: ${comment[i]}\n")
             }
         }
         // Set result to the text view

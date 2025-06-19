@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import org.w3c.dom.Comment
-import vcmsa.ci.myapplication.SongListActivity
 
 class MainActivity : AppCompatActivity() {
     // Declare parallel arrays to store packing list information
@@ -26,13 +25,25 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val songInput = findViewById<EditText>(R.id.editTheSongTitle)
-        val artistInput = findViewById<EditText>(R.id.editTheArtistName)
-        val ratingInput = findViewById<EditText>(R.id.editTheRating)
+        val btnView = findViewById<Button>(R.id.btnView)
+        // View list button navigate to second screen
+        btnView.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            // Send arrays to next screen
+            intent.putStringArrayListExtra("SongTitle", SongTitle)
+            intent.putStringArrayListExtra("ArtistName", ArtistName)
+            intent.putIntegerArrayListExtra("Rating", ArrayList(Rating))
+            intent.putStringArrayListExtra("Comment", Comment)
+            startActivity(intent)
+        }
+
+
+        val songInput = findViewById<EditText>(R.id.editSongTitle)
+        val artistInput = findViewById<EditText>(R.id.editArtistName)
+        val ratingInput = findViewById<EditText>(R.id.editRating)
         val commentInput = findViewById<EditText>(R.id.editComment)
 
         val btnAdd = findViewById<Button>(R.id.btnAdd)
-        val btnViewList = findViewById<Button>(R.id.btnViewList)
         val btnExit = findViewById<Button>(R.id.btnExit)
 
         // Handle Add button click
@@ -67,18 +78,6 @@ class MainActivity : AppCompatActivity() {
             songInput.text.clear()
             artistInput.text.clear()
             ratingInput.text.clear()
-
-            // View list button navigate to second screen
-            btnViewList.setOnClickListener {
-                val intent = Intent(this, SongListActivity::class.java)
-                // Send arrays to next screen
-                intent.putStringArrayListExtra("SongTitle", SongTitle)
-                intent.putStringArrayListExtra("ArtistName", ArtistName)
-                intent.putIntegerArrayListExtra("Rating", ArrayList(Rating))
-                intent.putStringArrayListExtra("Comment", Comment)
-                startActivity(intent)
-            }
-
             // Exit button
             btnExit.setOnClickListener {
                 finish()
