@@ -37,6 +37,7 @@
     <!-- Button to add item -->
     <Button
         android:id="@+id/btnAdd"
+        android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add to Playlist" />
@@ -44,6 +45,7 @@
     <!-- Button to view packing list -->
     <Button
         android:id="@+id/btnViewList"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="View Song List" />
@@ -51,6 +53,7 @@
     <!-- Button to exit app -->
     <Button
         android:id="@+id/btnExit"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Exit" />
