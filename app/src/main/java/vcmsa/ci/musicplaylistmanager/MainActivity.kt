@@ -1,5 +1,6 @@
 package vcmsa.ci.musicplaylistmanager
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import org.w3c.dom.Comment
+import vcmsa.ci.myapplication.SongListActivity
 
 class MainActivity : AppCompatActivity() {
     // Declare parallel arrays to store packing list information
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private val Rating = ArrayList<Int>()
     private val Comment = ArrayList<String>()
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

@@ -5,15 +5,22 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- TextView to show packing list -->
+    <!-- TextView to show Song list -->
     <TextView
-        android:id="@+id/txtPackingList"
+        android:id="@+id/txtSongList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:textAlignment="center"
         android:text="Song List will appear here"
         android:textSize="16sp" />
+
+    <!-- Button to calculate avarage rating -->
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate the Average rating" />
     <!-- Button to return to main screen -->
     <Button
         android:id="@+id/btnBack"
